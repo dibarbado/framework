@@ -1,0 +1,7 @@
+# set the server administrator email
+SetEnv SERVER_ADMIN dibarbado@gmail.com
+
+# remove .php extension
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
