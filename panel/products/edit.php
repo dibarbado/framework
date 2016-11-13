@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $conn = new DB();
-    $_GET['id'] = $conn->filter($_GET['id']);
+    $_GET['id'] = $_GET['id'];
     $results = $conn->get_results("select id, name, price from products where id = '".$_GET['id']."'");
     ?>
     <!DOCTYPE html>
@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 } else {
     $conn = new DB();
     $values = [
-        'name'=>$conn->filter($_POST['name']),
-        'price'=>$conn->filter($_POST['price']),
+        'name'=>$_POST['name'],
+        'price'=>$_POST['price'],
     ];
     $where = ['id'=>$_POST['id']];
     $results = $conn->update('products',$values,$where,1);

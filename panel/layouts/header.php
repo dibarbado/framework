@@ -18,6 +18,22 @@
                     <a href="<?= Utils::link('products'); ?>">PRODUTOS</a>
                 </li>
             </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">PERFIL<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?= Utils::link('sellers','edit'); ?>">Conta</a></li>
+                        <li class="divider"></li>
+                        <li><a>Configurações</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="<?= Utils::link('authentication','signout'); ?>">
+                        <span class="glyphicon glyphicon-log-out"></span>
+                        SAIR
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
