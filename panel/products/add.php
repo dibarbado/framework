@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 } else {
     $conn = new DB();
     $values = [
-        'name'=>$conn->filter($_POST['name']),
-        'price'=>$conn->filter($_POST['price']),
+        'name'=>$_POST['name'],
+        'price'=>$_POST['price'],
     ];
     $results = $conn->insert('products',$values);
     if ($results) {
