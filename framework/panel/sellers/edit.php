@@ -76,11 +76,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $where = ['id' => $id];
     $results = $conn->update('sellers',$values,$where,1);
     if ($results) {
-        $_SESSION['ALERT'] = ['success','Cadastro editado com sucesso!'];
         $results = $conn->get_results("select id, firstname, lastname, phonenumber, email, password, birthday, gender, created, modified from sellers where id = ".$id);
         $_SESSION[__MODULE__]['USER_DATA'] = reset($results);
+        $_SESSION[__MODULE__]['ALERT'] = ['success','Cadastro editado com sucesso!'];
     } else {
-        $_SESSION['ALERT'] = ['danger','Cadastro não editado tente novamente!'];
+        $_SESSION[__MODULE__]['ALERT'] = ['danger','Cadastro não editado tente novamente!'];
     }
     header('location: '.$_SERVER['HTTP_REFERER']);
     exit;

@@ -4,7 +4,7 @@
         <?php include __HEAD__; ?>
     </head>
     <body>
-        <?php include __HEADER_AUTHENTICATION__; ?>
+        <?php include __LAYOUTS__.'header-authentication.php'; ?>
         <div class="container">
             <div class="visible-xs"><!-- login-for-mobile start -->
                 <div id="div-do-login">

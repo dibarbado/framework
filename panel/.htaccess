@@ -1,2 +1,0 @@
-# load autoload
-php_value auto_prepend_file "C:/Bitnami/rubystack-2.2.5-3/apache2/htdocs/panel/autoload.php"

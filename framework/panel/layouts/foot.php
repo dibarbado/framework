@@ -2,14 +2,15 @@
 <script src="<?= __JS__.'bootstrap/bootstrap.min.js'; ?>"></script>
 <script>
     $(function(){
+
         // alert messages
-        $('#alert').fadeIn(2000).delay(3000).slideUp(1000)
+        $('#alert').fadeIn(2000).parent().delay(7000).slideUp(500)
 
         // delete modal
         $('.form-delete').on('submit',function(event){
             event.preventDefault()
             var index = $('.form-delete').index(this)
-            var modal = $('#confirm-delete').modal('show')
+            var modal = $('#modal-delete').modal('show')
             modal.on('click','.btn-delete',function(){
                 $('.form-delete')[index].submit()
             })
