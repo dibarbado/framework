@@ -13,7 +13,8 @@ class Utils
     public static function getController()
     {
         $temp = $_SERVER['REDIRECT_URL'];
-        $temp = str_replace('/'.__MODULE__.'/', '', $temp);
+        $temp = substr($temp, strpos($temp, __MODULE__));
+        $temp = str_replace(__MODULE__.'/', '', $temp);
         $temp = explode('/',$temp);
         $controller = reset($temp);
         if ($controller != self::getAction()) {

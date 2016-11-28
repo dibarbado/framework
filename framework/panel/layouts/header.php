@@ -17,6 +17,9 @@
                 <li class="<?= (Utils::getController() == 'products') ? 'active' : null; ?>">
                     <a href="<?= Utils::link('products'); ?>">PRODUTOS</a>
                 </li>
+                <li class="<?= (Utils::getController() == 'invoices') ? 'active' : null; ?>">
+                    <a href="<?= Utils::link('invoices'); ?>">NOTAS FISCAIS</a>
+                </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
@@ -39,14 +42,17 @@
 </nav>
 
 <!-- alert -->
-<?php if (isset($_SESSION['ALERT'])) : ?>
-    <div class="container-fluid">
-        <div id="alert" class="alert alert-<?= $_SESSION['ALERT'][0]; ?> alert-dismissible" role="alert" style="display: none;">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong><?= $_SESSION['ALERT'][1]; ?></strong>
+<div id="container-alert">
+    <?php if (isset($_SESSION[__MODULE__]['ALERT'])) : ?>
+        <div class="container-fluid">
+            <div id="alert" class="alert alert-<?= $_SESSION[__MODULE__]['ALERT'][0]; ?> alert-dismissible" role="alert" style="display: none;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong><?= $_SESSION[__MODULE__]['ALERT'][1]; ?></strong>
+            </div>
         </div>
-    </div>
-    <?php unset($_SESSION['ALERT']); ?>
-<?php endif; ?>
+        <?php unset($_SESSION[__MODULE__]['ALERT']); ?>
+    <?php endif; ?>
+</div>
+<!-- alert -->

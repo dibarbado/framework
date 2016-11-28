@@ -19,14 +19,14 @@
 </nav>
 
 <!-- alert -->
-<?php if (isset($_SESSION['ALERT'])) : ?>
+<?php if (isset($_SESSION[__MODULE__]['ALERT'])) : ?>
     <div class="container-fluid">
-        <div id="alert" class="alert alert-<?= $_SESSION['ALERT'][0]; ?> alert-dismissible" role="alert" style="display: none;">
+        <div id="alert" class="alert alert-<?= $_SESSION[__MODULE__]['ALERT'][0]; ?> alert-dismissible" role="alert" style="display: none;">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
-            <strong><?= $_SESSION['ALERT'][1]; ?></strong>
+            <strong><?= $_SESSION[__MODULE__]['ALERT'][1]; ?></strong>
         </div>
     </div>
-    <?php unset($_SESSION['ALERT']); ?>
+    <?php unset($_SESSION[__MODULE__]['ALERT']); ?>
 <?php endif; ?>

@@ -8,7 +8,7 @@ if ($_POST) {
     if (!empty($results)) {
         $_SESSION[__MODULE__]['USER_DATA'] = reset($results);
     } else {
-        $_SESSION['ALERT'] = ['danger','Login ou senha inválidos tente novamente!'];
+        $_SESSION[__MODULE__]['ALERT'] = ['danger','Login ou senha inválidos tente novamente!'];
     }
     header('location: '.$_SERVER['HTTP_REFERER']);
     exit;
